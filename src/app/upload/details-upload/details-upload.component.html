@@ -1,0 +1,11 @@
+<table>
+    <th>{{result.file}}</th>
+    <tr *ngFor='let page of result.pages; let i = index'>
+        <td>pagina {{i}}</td>
+        <input class="form-check-input" *ngIf="page" type="checkbox" [checked]="copyResult[i]" [(ngModel)]="copyResult[i]">
+    </tr>
+</table>
+<button class="btn btn-success" [disabled]="!result" (click)="makeColoredFlag()">All Colored!</button>
+
+<button class="btn btn-success" [disabled]="!result" (click)="sendPreferences()">Send Preferences</button>
+<div *ngIf='showPrice'>Total Price: {{price}}</div>
